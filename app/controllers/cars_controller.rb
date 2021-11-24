@@ -1,13 +1,11 @@
 class CarsController < ApplicationController
-
-  before_action :set_car, only: %i[new create destroy]
+  before_action :set_car, only: %i[show new create destroy]
 
   def index
     @cars = Car.all
   end
 
   def show
-    @car = Car.find(params[:id])
     @booking = Booking.new
   end
 
@@ -23,12 +21,6 @@ class CarsController < ApplicationController
       render :new
     end
   end
-
-  # def destroy
-  #   @cars = Car.find(params[:id])
-  #   @cars.destroy
-  #   redirect_to root_path
-  # end
 
   private
 
