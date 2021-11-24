@@ -1,4 +1,40 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="navbar navbar-expand-sm navbar-light">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
+  <% end %>
 
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <i class="bi bi-door-open"></i>
+        <%= link_to "Login", new_user_session_path %>
+      </li>
+    </ul>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <i class="bi bi-box-arrow-right"></i>
+  </div>
+</div>
+<hr></hr>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637723759/ftkwt8sucwokq2xoxip0.jpg)">
+  <%= link_to "🚗  SIGN UP! 🚗", new_user_registration_path %>
+</div>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Lamborghini
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    VW Buggy
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    What da hell is that?
+  </div>
+</div>
