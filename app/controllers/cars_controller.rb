@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+
   before_action :set_car, only: %i[show new create destroy]
 
   def index
