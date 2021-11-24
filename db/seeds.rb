@@ -5,16 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+4.times do
+  user = User.new(email: Faker::Internet.email, password: 123456)
+  user.save!
+  3.times do
+    car = Car.new(
+      brand: Faker::Vehicle.make,
+      model: Faker::Vehicle.model,
+      price: rand(100..5000),
+      capacity: rand(1..7),
+      rating: rand(1..10)
+    )
+    car.user = user
+    car.save!
 
-12.times do
-  cars = Car.new(
-    brand: Faker::Vehicle.make,
-    model: Faker::Vehicle.model,
-    price: rand(100..5000),
-    capacity: rand(1..7),
-    rating: rand(1..10)
-  )
-  cars.save!
-
-  puts "saved correctly"
+    puts "saved correctly"
+  end
 end
