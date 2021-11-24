@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="card-show-title">
+    <h1>Cars List</h1>
+  </div>
+    <div class="row cards-car">
+      <% @cars.each do |car| %>
+        <div class="col-4-sm">
+          <div class="card-poster">
+              <%= image_tag booking.car.car_url, alt: "car picture" %>
+          <div class="card-description">
+            <div class="card-title">
+              <h5><%= booking.car.brand %></h5>
+              <p> <%= booking.car.price %></p>
+            </div>
+            <%= link_to "", booking_path(booking), method: :post, id:"create-booking", class: "hidden" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
