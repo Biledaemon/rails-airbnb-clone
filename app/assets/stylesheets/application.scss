@@ -1,4 +1,3 @@
-// Graphical variables
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
@@ -11,3 +10,5 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body { width: 1000px; margin: 0 auto; }
