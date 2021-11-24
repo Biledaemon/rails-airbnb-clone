@@ -23,12 +23,6 @@ class CarsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @cars = Car.find(params[:id])
-  #   @cars.destroy
-  #   redirect_to root_path
-  # end
-
   private
 
   def car_params
