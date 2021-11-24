@@ -1,0 +1,15 @@
+ <div class="row">
+      <div class="col-12">
+        <hr>
+        <div class="form">
+         <h3>Add a car</h3>
+        <%= simple_form_for(@car) do |f| %>
+          <%= f.input :brand, placeholder: 'Add your brand' %>
+          <%= f.input :model, placeholder: 'Add your model' %>
+          <%= f.input :capacity, placeholder: 'Add your capacity', collection: 1..5, id: "example"  %>
+          <%= f.input :price, placeholder: 'Add your price', collection: 100..500, id: "example"  %>
+          <%= f.submit "Publish", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+    </div>
+  </div>
