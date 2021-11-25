@@ -6,16 +6,21 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
     @booking.car = @car
+    @booking.user = current_user
     @booking.save
-    redirect_to car_path(@car)
+    redirect_to confirm_booking_path(@booking)
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to root_path
+  end
+
+  def confirm
+    @booking = Booking.find(params[:id])
   end
 
   private

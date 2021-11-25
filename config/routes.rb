@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     end
   end
   # get 'cars/mine', to: 'cars#mine'
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:destroy] do
+    member do
+      get 'confirm'
+    end
+  end
 end
