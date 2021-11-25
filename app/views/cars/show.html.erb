@@ -1,21 +1,23 @@
 <div class="container">
   <div class="card-show-title">
-    <h1>Cars List</h1>
-  </div>
-    <div class="row cards-car">
-      <% car.brand %>
+    <%= cl_image_tag("car_image_#{rand(1..21)}", width: 800, height: 800, crop: :scale) %>
+      <%# <%= image_tag booking.car.car_url, alt: "car picture" %>
+      <div class="row cards-car">
         <div class="col-4-sm">
-          <div class="card-poster">
-              <%= image_tag booking.car.car_url, alt: "car picture" %>
+          <div class="card-booking">
+            <h2 class="card-trip-pricing">$<strong><%= car.price %></strong></h2>
+            <%= link_to booking_path(booking), method: :post, id:"create-booking", "#", class: "btn btn-flat" %>
+          </div>
           <div class="card-description">
-            <div class="card-title">
-              <h5><%= booking.car.model %></h5>
-              <p> <%= booking.car.price %></p>
-            </div>
-            <%= link_to "", booking_path(booking), method: :post, id:"create-booking", class: "hidden" %>
-            </div>
+            <h5> Car Details</h5>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
           </div>
         </div>
       </div>
-      <% end %>
   </div>
+</div
