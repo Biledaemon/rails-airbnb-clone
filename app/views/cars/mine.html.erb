@@ -1,0 +1,28 @@
+<h2>My Cars</h2>
+
+<div class="navbar navbar-expand-sm navbar-light">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
+  <% end %>
+</div>
+
+<div class="container">
+  <% @cars.each_slice(3) do |s| %>
+    <div class="row cards pb-3">
+      <% s.each do |car| %>
+        <div class="col-4-sm">
+          <div class="card-trip">
+            <%= cl_image_tag("picture_url)", width: 800, height: 800, crop: :scale) %>
+            <div class="card-trip-infos">
+              <div>
+                <h2> <strong><%= car.brand %></strong></h2>
+                <p><strong><%= car.model %></strong></p>
+              </div>
+                <h2 class="card-trip-pricing">$<strong><%= car.price %></strong></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
