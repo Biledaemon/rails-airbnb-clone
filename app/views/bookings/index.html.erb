@@ -1,0 +1,8 @@
+<h3>Your Bookings with CarBnB</h3>
+
+<p>
+<% @bookings.each do |booking| %>
+<%= booking.car.brand %>
+<%= booking.car.model %>
+<% end %>
+</p>

@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_car, only: [:new, :create, :destroy]
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def new
     @booking = Booking.new
   end
@@ -20,6 +24,10 @@ class BookingsController < ApplicationController
   end
 
   def confirm
+    @booking = Booking.find(params[:id])
+  end
+
+  def userbooking
     @booking = Booking.find(params[:id])
   end
 
