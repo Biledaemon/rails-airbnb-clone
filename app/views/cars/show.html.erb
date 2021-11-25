@@ -5,25 +5,25 @@
 </div>
 
 <div class="container">
-  <div class="card-show-title">
-    <%= cl_image_tag("car_image_#{rand(1..21)}", width: 800, height: 800, crop: :scale) %>
-      <%# <%= image_tag booking.car.car_url, alt: "car picture" %>
-      <div class="row cards-car">
+  <div class="card-trip mb-3">
+    <%= cl_image_tag("car_image_#{rand(1..21)}", width: 450, height: 350, crop: :scale) %>
+  </div>
+      <div class="cards">
         <div class="col-4-sm">
-          <div class="card-booking">
-            <h2 class="card-trip-pricing">$<strong><%= car.price %></strong></h2>
-            <%= link_to booking_path(booking), method: :post, id:"create-booking", "#", class: "btn btn-flat" %>
-          </div>
-          <div class="card-description">
-            <h5> Car Details</h5>
+          <div class="card d-flex align-items-center ">
+            <h5> <strong>Car Details:</strong></h5>
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li> Brand: <%= @car.brand %> </li>
+                <li> Model: <%= @car.model  %> </li>
+                <li> Capacity: <%= @car.capacity  %></li>
+                <li>Rating: <%= @car.rating %></li>
               </ul>
+          </div>
+          <div class="card d-flex align-items-center">
+            <h5><strong>Price: $<%= @car.price %></strong></h5>
+            <br>
+            <%= link_to "Book Car", booking_path, method: :post, id:"create-booking", class: "btn btn-flat"  %>
           </div>
         </div>
       </div>
-  </div>
 </div
