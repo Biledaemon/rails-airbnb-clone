@@ -1,19 +1,21 @@
+ <div class="navbar navbar-expand-sm navbar-light">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
+  <% end %>
+</div>
+
  <div class="row">
       <div class="col-12">
         <hr>
         <div class="form">
-         <h3>Add a car</h3>
-          <%= simple_form_for([@car) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :image_url %>
-          <%= f.submit %>
-          <% end %>
-        <%= simple_form_for(@car) do |f| %>
+         <h3>Add your car!</h3>
+          <%= simple_form_for(@car) do |f| %>
           <%= f.input :brand, placeholder: 'Brand' %>
           <%= f.input :model, placeholder: 'Model' %>
-          <%= f.input :capacity, placeholder: 'Pasenger Limit', collection: 1..5, id: "example"  %>
-          <%= f.input :price, placeholder: 'Price', collection: 100..500, id: "example"  %>
-          <%= f.submit "Publish", class: "btn btn-primary" %>
+          <%= f.input :capacity, placeholder: 'Passenger Limit', collection: 1..5, id: "example"  %>
+          <%= f.input :price, placeholder: 'Price', collection: 200..500, id: "example"  %>
+          <%= f.input :picture_url %>
+          <%= f.submit "Create it!", class: "btn btn-primary"%>
         <% end %>
         </div>
     </div>

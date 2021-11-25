@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
 
-  before_action :set_car, only: %i[show new create destroy]
+  before_action :set_car, only: %i[show destroy]
 
   def index
     @cars = Car.all
@@ -16,17 +16,22 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
+    @car.user = current_user
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to mine_cars_path
     else
       render :new
     end
   end
 
+  def mine
+    @cars = current_user.cars
+  end
+
   private
 
   def car_params
-    params.require(:car).permit(:car, :user)
+    params.require(:car).permit(:brand, :model, :capacity, :price, :picture_url)
   end
 
   def set_car
