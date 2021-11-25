@@ -12,7 +12,11 @@
       <% s.each do |car| %>
         <div class="col-4-sm">
           <div class="card-trip">
-            <%= cl_image_tag("picture_url)", width: 800, height: 800, crop: :scale) %>
+            <% if car.picture_url %>
+              <%= image_tag car.picture_url%>
+            <% else %>
+              <%= cl_image_tag("car_image_#{rand(1..21)}", width: 800, height: 800, crop: :scale) %>
+            <% end %>
             <div class="card-trip-infos">
               <div>
                 <h2> <strong><%= car.brand %></strong></h2>

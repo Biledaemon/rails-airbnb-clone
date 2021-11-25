@@ -16,13 +16,13 @@
                 <li> Brand: <%= @car.brand %> </li>
                 <li> Model: <%= @car.model  %> </li>
                 <li> Capacity: <%= @car.capacity  %></li>
-                <li>Rating: <%= @car.rating %></li>
+                <li> Rating: <%= @car.rating %></li>
               </ul>
           </div>
           <div class="card d-flex align-items-center">
             <h5><strong>Price: $<%= @car.price %></strong></h5>
             <br>
-            <%= link_to "Book Car", booking_path, method: :post, id:"create-booking", class: "btn btn-flat"  %>
+            <%= link_to "Book Car", car_bookings_path(@car), method: :post, id:"create-booking", class: "btn btn-flat"  %>
           </div>
         </div>
       </div>
