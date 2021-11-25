@@ -17,7 +17,10 @@
                 <p><strong><%= car.model %></strong></p>
               </div>
                 <h2 class="card-trip-pricing">$<strong><%= car.price %></strong></h2>
-           </div>
+            </div>
+            <div class="car-card-actions">
+            <%= link_to 'More info', car_path(car) %>
+          </div>
           </div>
         </div>
       <% end %>
