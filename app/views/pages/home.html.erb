@@ -1,41 +1,47 @@
-<div class="navbar navbar-expand-sm navbar-light">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
-  <% end %>
+<div class="container">
+  <div class="navbar navbar-expand-sm navbar-light">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
+    <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <i class="bi bi-door-open"></i>
-        <%= link_to "Login", new_user_session_path %>
-      </li>
-    </ul>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-  <i class="bi bi-box-arrow-right"></i>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <button type="button" class="btn btn-outline-primary"><%= link_to "Login", new_user_session_path %> <i class="bi bi-door-open"></i></button>
+        </li>
+      </ul>
+    <button type="button" class="btn btn-outline-primary"><%= link_to " Sign Out", destroy_user_session_path, method: :delete %> <i class="bi bi-box-arrow-right"></i></button>
+    </div>
   </div>
-</div>
-<hr></hr>
-
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637723759/ftkwt8sucwokq2xoxip0.jpg)">
-  <%= "🚗 We are a team of car aficionados. We will find your dream car to rent. 🚗" %>
+  <hr></hr>
 </div>
 
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774912/x2l0ebtrshtvu6q1mpgb.jpg)">
-
-    <%= link_to "Sign Up", new_user_registration_path %>
+<div class="container">
+  <div class="row mt-4">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637723759/ftkwt8sucwokq2xoxip0.jpg)">
+      <%= "We are a team of car aficionados. We will find your dream car to rent." %>
+    </div>
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774908/r8csssvm8m1wjnb54j6z.jpg)">
-    <%= link_to "View Our Cars", cars_path %>
-  </div>
+  <div class="row mt-4">
+    <div class="cards">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774912/x2l0ebtrshtvu6q1mpgb.jpg)">
+        <%= link_to "Sign Up", new_user_registration_path %>
+      </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774902/j4fwqggspahbmzjigbju.jpg)">
-    <%= link_to "Upload Your Car", new_user_registration_path %>
 
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774908/r8csssvm8m1wjnb54j6z.jpg)">
+        <%= link_to "View Our Cars", cars_path %>
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774902/j4fwqggspahbmzjigbju.jpg)">
+        <%= link_to "Upload Your Car", new_user_registration_path %>
+      </div>
+    </div>
   </div>
+</div>
