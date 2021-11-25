@@ -1,9 +1,24 @@
 <h2>My Cars</h2>
 
 <div class="navbar navbar-expand-sm navbar-light">
-  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= link_to cars_path, class: "navbar-brand" do %>
     <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
   <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <button type="button" class="btn btn-outline-primary"><%= link_to "Back", cars_path %><i class="bi bi-backspace"></i></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr></hr>
 </div>
 
 <div class="container">
@@ -15,7 +30,7 @@
             <% if car.picture_url %>
               <%= image_tag car.picture_url%>
             <% else %>
-              <%= cl_image_tag("car_image_#{rand(1..21)}", width: 800, height: 800, crop: :scale) %>
+              <img src="https://www.freeiconspng.com/uploads/no-image-icon-24.jpg width="450" height="350" crop="scale">
             <% end %>
             <div class="card-trip-infos">
               <div>
