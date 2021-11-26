@@ -1,7 +1,7 @@
 <div class="container">
   <div class="navbar navbar-expand-sm navbar-light">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>60, :height=>60, :crop=>"scale") %>
+      <%= cl_image_tag("logo-carbnb_oqqbjq", :width=>60, :height=>60, :crop=>"scale") %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <button type="button" class="btn btn-outline-primary"><%= link_to "Login", new_user_session_path %> <i class="bi bi-door-open"></i></button>
+          <button type="button" class="btn btn-outline-primary"><%= link_to "Welcome", new_user_session_path %> <i class="bi bi-door-open"></i></button>
         </li>
       </ul>
     <button type="button" class="btn btn-outline-primary"><%= link_to " Sign Out", destroy_user_session_path, method: :delete %> <i class="bi bi-box-arrow-right"></i></button>
@@ -21,29 +21,36 @@
   <hr></hr>
 </div>
 
-<div class="container overflow-hidden">
-  <div class="row mt-4 px-5">
-  <p id="landing_text">
-  We are a team of car aficionados. Find your dream car to rent</p>
-  </div>
+  <div class="container overflow-hidden" id="landing-page-view-cars">
+    <div class="row mt-4 px-5">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637954707/jon-flobrant-PhWZM0-H7QY-unsplash_ckzvvv.jpg">
+        <p id="landing_text">We are a team of car aficionados.<br>Find your dream car to rent.</p>
+      </div>
+    </div>
 
-  <div class="row mt-4 px-5">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774912/x2l0ebtrshtvu6q1mpgb.jpg)">
-        <%= link_to "Explore Our Cars and Book", cars_path %>
+
+    <div class="row mt-4 px-5">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637951354/erik-mclean-ZRns2R5azu0-unsplash_zduyxc.jpg)">
+          <%= link_to "Explore Our Cars and Book", cars_path, class: "card_link" %>
+      </div>
     </div>
   </div>
   <hr></hr>
 
-  <div class="row mt-4 mb-5 px-5">
-    <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774908/r8csssvm8m1wjnb54j6z.jpg)">
-        <%= link_to "Upload Your Car", new_car_path %>
-      </div>
+  <div class="container overflow-hidden">
+    <div class="row mt-4 mb-5 px-5">
+      <div class="cards">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774908/r8csssvm8m1wjnb54j6z.jpg)">
+          <%= link_to "Upload Your Car", new_car_path, class: "card_link" %>
+        </div>
 
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774902/j4fwqggspahbmzjigbju.jpg)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637774902/j4fwqggspahbmzjigbju.jpg)">
+          <%= link_to "View My Cars", mine_cars_path, class: "card_link" %>
+        </div>
 
-        <%= link_to "View My Cars", mine_cars_path %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/hugeyeti/image/upload/v1637791520/car_image_9.jpg)">
+          <%= link_to "View My Bookings", bookings_path, class: "card_link" %>
+        </div>
       </div>
     </div>
-  </div>
 </div>
