@@ -29,7 +29,7 @@
       <% s.each do |car| %>
         <div class="col-4-sm">
           <div class="card-trip">
-            <%= link_to "+", mine_cars_path, class: "card-remove-link", method: :delete, data:{confirm: 'Are you sure you want to delete?'} %>
+            <%= link_to "+", car_path(car), class: "card-remove-link", method: :delete, data:{confirm: 'Are you sure you want to delete?'} %>
             <% if car.picture_url.present? %>
               <%= image_tag car.picture_url%>
             <% else %>
