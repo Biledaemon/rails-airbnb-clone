@@ -24,6 +24,11 @@ class CarsController < ApplicationController
     end
   end
 
+  def destroy
+    @car.destroy
+    redirect_to mine_cars_path
+  end
+
   def mine
     @cars = current_user.cars
   end
