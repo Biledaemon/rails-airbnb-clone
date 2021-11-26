@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_car, only: [:new, :create, :destroy]
+  before_action :set_car, only: %i[new create]
 
   def index
     @bookings = current_user.bookings
@@ -20,16 +20,13 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to root_path
+    redirect_to bookings_path
   end
 
   def confirm
     @booking = Booking.find(params[:id])
   end
 
-  def userbooking
-    @booking = Booking.find(params[:id])
-  end
 
   private
 
