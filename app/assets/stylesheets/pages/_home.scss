@@ -17,6 +17,7 @@
 }
 
 .card-remove-link {
+  background-color: black;
   color: white;
   border-radius: 50%;
   border: 1px solid white;
@@ -42,8 +43,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-
-
 }
 
 #landing_text {
@@ -54,7 +53,7 @@
   font-size: 24px;
   color: #494947;
   background-color: white;
-  border-radius: 5px
+  border-radius: 5px;
 }
 
 // Smallest device
