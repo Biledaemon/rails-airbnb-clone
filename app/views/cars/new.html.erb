@@ -1,3 +1,10 @@
+ <div class="container">
+  <div class="navbar navbar-expand-sm navbar-light">
+    <%= link_to cars_path, class: "navbar-brand" do %>
+      <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
+    <% end %>
+  </div>
+   
  <div class="navbar navbar-expand-sm navbar-light">
   <%= link_to cars_path, class: "navbar-brand" do %>
     <%= cl_image_tag("zb332bxefxs7q09ebf8y.png", :width=>35, :height=>53, :crop=>"scale") %>
@@ -17,19 +24,20 @@
   </div>
 </div>
 
- <div class="row">
-      <div class="col-12">
-        <hr>
-        <div class="form">
-         <h3>Add your car!</h3>
-          <%= simple_form_for(@car) do |f| %>
-          <%= f.input :brand, placeholder: 'Brand' %>
-          <%= f.input :model, placeholder: 'Model' %>
-          <%= f.input :capacity, placeholder: 'Passenger Limit', collection: 1..5, id: "example"  %>
-          <%= f.input :price, placeholder: 'Price', collection: 200..500, id: "example"  %>
-          <%= f.input :picture_url %>
-          <%= f.submit "Create it!", class: "btn btn-primary"%>
-        <% end %>
-        </div>
+  <div class="row">
+        <div class="col-12">
+          <hr>
+          <div class="form">
+          <h3>Add your car!</h3>
+            <%= simple_form_for(@car) do |f| %>
+            <%= f.input :brand, placeholder: 'Brand' %>
+            <%= f.input :model, placeholder: 'Model' %>
+            <%= f.input :capacity, placeholder: 'Passenger Limit', collection: 1..5, id: "example"  %>
+            <%= f.input :price, placeholder: 'Price', collection: 200..500, id: "example"  %>
+            <%= f.input :picture_url %>
+            <%= f.submit "Create it!", class: "btn btn-primary"%>
+          <% end %>
+          </div>
+      </div>
     </div>
-  </div>
+ </div>
