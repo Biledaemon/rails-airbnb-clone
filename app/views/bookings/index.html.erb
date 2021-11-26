@@ -26,8 +26,8 @@
   <ul>
     <% @bookings.each do |booking| %>
     <li>
-      <p><%= booking.car.brand %>, <%= booking.car.model %> <%= link_to booking_path(booking), method: :delete, data: { confirm: "Delete #{booking.car.brand}, #{booking.car.model}?" } do %>
-        <i class="bi bi-trash" aria-hidden="true"></i> </p>
+      <h5><%= booking.car.brand %>, <%= booking.car.model %> <%= link_to booking_path(booking), method: :delete, data: { confirm: "Delete #{booking.car.brand}, #{booking.car.model}?" } do %>
+        <i class="bi bi-trash" aria-hidden="true"></i> </h5>
       <% end %>
     </li>
     <% end %>

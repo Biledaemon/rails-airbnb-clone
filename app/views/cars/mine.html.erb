@@ -17,28 +17,27 @@
       <button type="button" class="btn btn-outline-primary"><%= link_to " Sign Out", destroy_user_session_path, method: :delete %> <i class="bi bi-box-arrow-right"></i></button>
     </div>
   </div>
-  <hr></hr>
 </div>
 
 <div class="container">
-<h4>My Cars</h4>
-
-<div class="container">
-  <% @cars.each_slice(3) do |s| %>
-    <div class="row cards pb-3">
-      <% s.each do |car| %>
-        <div class="col-4-sm">
-          <div class="card-trip">
-            <%= link_to "+", car_path(car), class: "card-remove-link", method: :delete, data:{confirm: 'Are you sure you want to delete?'} %>
-            <% if car.picture_url.present? %>
-              <%= image_tag car.picture_url%>
-            <% else %>
-              <img src="https://www.freeiconspng.com/uploads/no-image-icon-24.jpg" width="450" height="350" crop="scale">
-            <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2> <strong><%= car.brand %></strong></h2>
-                <p><strong><%= car.model %></strong></p>
+  <h4>My Cars</h4>
+  <div class="container">
+    <% @cars.each_slice(3) do |s| %>
+      <div class="row cards pb-3">
+        <% s.each do |car| %>
+          <div class="col-4-sm">
+            <div class="card-trip">
+              <%= link_to "+", car_path(car), class: "card-remove-link", method: :delete, data:{confirm: 'Are you sure you want to delete?'} %>
+              <% if car.picture_url.present? %>
+                <%= image_tag car.picture_url%>
+              <% else %>
+                <img src="https://www.freeiconspng.com/uploads/no-image-icon-24.jpg" width="450" height="350" crop="scale">
+              <% end %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2> <strong><%= car.brand %></strong></h2>
+                  <p><strong><%= car.model %></strong></p>
+                </div>
               </div>
             </div>
           </div>
